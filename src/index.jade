@@ -1,0 +1,166 @@
+include ./blocks/slide.jade
+include ./blocks/cover.jade
+include ./blocks/quote.jade
+include ./blocks/frame.jade
+
+- var title = "Как внедрить стандарты разработки, чтобы никто не пострадал"
+
+doctype html
+html(lang='ru')
+  head
+    title !{title}
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x10.css')
+    link(rel='stylesheet', href='theme.css')
+    link(rel='stylesheet', href='slides.css')
+  body.shower.list
+    header.caption
+      h1 !{title}
+    +slide({name: 'cover', header: title, classes:'cover'})
+      p Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/cover.jpg')
+    +slide({header: "Кто я?", classes: "label-header right white"})
+      ul
+        li Глава отдела фронтенда, LOVATA
+        li Full-stack Node.js разработчик
+      p
+        img.logo(src="pictures/minskcss.png")
+        img.logo(src="pictures/minskjs.png")
+        img.logo.css-m-js(src="pictures/css-minsk-js.svg")
+      +cover('pictures/about-cover.jpg')
+    +slide({header: "О чем буду говорить", classes: ""})
+      ul
+        li Как унифицировать codestyle (HTML, CSS, JS)
+        li Автоматизация его проверки
+    +slide({header: "Немного теории", classes: ""})
+      p Guidelines - общие описания и принципы - что и зачем
+      p Styleguide - как делать
+      footer
+        p Но они просто так никому не нужны
+        p Это скорее про то, каким должен быть интерфейс, а не код
+    +slide({header: "codestyle", classes: ""})
+      p codestyle - правила, по которым надо писать код
+      footer
+        p Но и он никому не нужен (на самом деле)    
+    +slide({header: "", classes: ""})
+      p linters - автоматическая проверка
+    +slide({header: "", classes: ""})
+      ul
+        li Правила хранятся в репозитории проекта
+        li Они внедрены в процесс сборки
+        li Ошибки видно в редакторе
+        li Невалидный код не попадает в общую кодовую базу
+    +slide({header: "С чего начать", classes: ""})
+      p С настройки редактора - .editorconfig
+    +slide({header: ".editorconfig", classes: ""})
+      p Какие задачи решает
+    +slide({header: "Формат .editorconfig", classes: ""})
+      p код
+    +slide({header: "Поддержка .editorconfig", classes: ""})
+    +slide({header: "HTML", classes: ""})
+      p HTMLHint
+    +slide({header: "", classes: ""})
+      p Правила
+    +slide({header: "", classes: ""})
+      p Установка
+      p Конфигурация
+    +slide({header: "", classes: ""})
+      p Редакторы
+    +slide({header: "", classes: ""})
+      p В сборке htmlhint-loader
+    +slide({header: "", classes: ""})
+      p htmllint / html-lint валидация html5
+      p pug-lint
+    +slide({header: "CSS", classes: ""})
+      p Stylelint
+    +slide({header: "", classes: ""})
+      p Правила
+    +slide({header: "", classes: ""})
+      p Установка
+      p Конфигурация
+    +slide({header: "", classes: ""})
+      p Редакторы
+    +slide({header: "", classes: ""})
+      p В сборке stylelint-loader
+    +slide({header: "", classes: ""})
+      p sass-lint / stylelint-scss
+      p lesshint
+      p Stylint
+      p stylelint-selector-bem-pattern
+    +slide({header: "Порядок написания атрибутов", classes: ""})
+      p http://csscomb.com/
+    +slide({header: "", classes: ""})
+      p Правила
+      p Установка
+      p Конфигурация
+    +slide({header: "", classes: ""})
+      p Редакторы
+    +slide({header: "Генерация style guides", classes: ""})
+      p https://github.com/davidhund/styleguide-generators#css-parsing-css-source
+    +slide({header: "JS", classes: ""})
+      p ESLint
+    +slide({header: "", classes: ""})
+      p Правила
+      p Установка
+      p Конфигурация
+    +slide({header: "", classes: ""})
+      p Редакторы
+    +slide({header: "", classes: ""})
+      p В сборке eslint-loader
+    +slide({header: "StandardJS", classes: ""})
+    +slide({header: "Airbnb", classes: ""})
+    +slide({header: "", classes: ""})
+      p babel-eslint
+      p tslint
+      p eslint-plugin-flowtype
+    +slide({header: "", classes: ""})
+      p http://usejsdoc.org/
+    +slide({header: "Форматирование", classes: ""})
+      p prettier
+    +slide({header: "Запрещаем коммитить плохой код", classes: ""})
+      p pre-commit
+    +slide({header: "", classes: ""})
+      p Установка
+      p Конфигурация
+    +slide({header: "Работа с git", classes: ""})
+      p Git flow - как ветвиться
+    +slide({header: "", classes: ""})
+      p поначалу все хорошо, все хотят их внедрить, с нетерпением ждут...
+    +slide({header: "Проблема 1. Сборка падает из-за слишком строгих правил", classes: ""})
+      p Решение - даунгрейдить в сборке "мешаюшие" свойства на warn
+      ul
+        li Создаем еще 1 файл конфига .dev.eslintrc
+        li В нем extend от существующего конфига
+        li Добавляем правила с уровнем warn
+        li В webpack по ключу ENV подключаем нужный конфиг
+    +slide({header: "Проблема 2. Плохой код попадает в репозиторий", classes: ""})
+      p Решение - делать проверки в CI
+      p Bitbucket - Pipelines
+      p Github - TravisCI
+      p GitLab - 
+    +slide({header: "Подводя итог", classes: ""})
+      ul
+        li Настроить редактор
+        li Линтеры
+        li Документация
+        li Git hooks
+        li CI
+    +slide({header: "Материалы по теме", classes: ""})
+      ul
+        li Кодстайл и насилие
+        li Как оптимизировать фронтенд
+    +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
+      p.end-link
+        a.bigger(href="http://bit.ly/" target="_blank") bit.ly/
+        br
+        | Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/blur-cover.jpg')
+
+    .progress
+    script(src='shower/shower.min.js')
