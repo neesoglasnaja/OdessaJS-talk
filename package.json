@@ -1,12 +1,12 @@
 {
-    "name": "editors-wars",
+    "name": "odessa-js-2018",
     "version": "1.0.0",
     "description": "Presentation slides",
     "author": "Aleksandra Shinkevich",
-    "homepage": "https://github.com/neesoglasnaja/editors-wars",
+    "homepage": "https://github.com/neesoglasnaja/OdessaJS2018",
     "repository": {
         "type": "git",
-        "url": "git://github.com/neesoglasnaja/editors-wars.git"
+        "url": "git://github.com/neesoglasnaja/OdessaJS2018.git"
     },
     "devDependencies": {
         "browser-sync": "^2.11.1",

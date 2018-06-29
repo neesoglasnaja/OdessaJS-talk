@@ -45,7 +45,7 @@ html(lang='ru')
     +slide({header: "codestyle", classes: ""})
       p codestyle - правила, по которым надо писать код
       footer
-        p Но и он никому не нужен (на самом деле)    
+        p Но и он никому не нужен (на самом деле)
     +slide({header: "", classes: ""})
       p linters - автоматическая проверка
     +slide({header: "", classes: ""})
@@ -57,19 +57,53 @@ html(lang='ru')
     +slide({header: "С чего начать", classes: ""})
       p С настройки редактора - .editorconfig
     +slide({header: ".editorconfig", classes: ""})
-      p Какие задачи решает
+      ul
+        li Единый формат настроек для всех IDE
+        li Конец войны "табы или пробелы"
+        li Разные настройки для разных файлов
+    +slide({header: "Из коробки", classes: "clear"})
+      +cover('pictures/editorconfig-native.png')
+    +slide({header: "Есть плагин", classes: "clear"})
+      +cover('pictures/editorconfig-plugin.png')
     +slide({header: "Формат .editorconfig", classes: ""})
-      p код
+      pre
+        code
+          | # comment
+          | root = true
+          | [*]
+          | end_of_line = lf
+          | insert_final_newline = true
+          | charset = utf-8
+          | indent_style = space
+          | indent_size = 4
+          | # Tab indentation (no size specified)
+          | [*.{md,jade}]
+          | indent_style = tab
     +slide({header: "Поддержка .editorconfig", classes: ""})
     +slide({header: "HTML", classes: ""})
       p HTMLHint
     +slide({header: "", classes: ""})
       p Правила
     +slide({header: "", classes: ""})
+      .terminal(data-content='HTMLHint')
+        p npm install htmlhint -g
+      pre
+        code
+          |{
+          |    "tagname-lowercase": true,
+          |    "attr-lowercase": true,
+          |    "attr-value-double-quotes": true,
+          |    "doctype-first": true,
+          |    "tag-pair": true,
+          |    "spec-char-escape": true,
+          |    "id-unique": true,
+          |    "src-not-empty": true,
+          |    "attr-no-duplication": true,
+          |    "title-require": true
+          |}
+    +slide({header: "", classes: ""})
       p Установка
       p Конфигурация
-    +slide({header: "", classes: ""})
-      p Редакторы
     +slide({header: "", classes: ""})
       p В сборке htmlhint-loader
     +slide({header: "", classes: ""})
@@ -141,7 +175,7 @@ html(lang='ru')
       p Решение - делать проверки в CI
       p Bitbucket - Pipelines
       p Github - TravisCI
-      p GitLab - 
+      p GitLab -
     +slide({header: "Подводя итог", classes: ""})
       ul
         li Настроить редактор

@@ -45,7 +45,7 @@
       <h2>codestyle</h2>
       <p>codestyle - правила, по которым надо писать код</p>
       <footer>
-        <p>Но и он никому не нужен (на самом деле)    </p>
+        <p>Но и он никому не нужен (на самом деле)</p>
       </footer>
     </section>
     <section id="" class="slide">
@@ -65,11 +65,25 @@
     </section>
     <section id="" class="slide">
       <h2>.editorconfig</h2>
-      <p>Какие задачи решает</p>
+      <ul>
+        <li>Единый формат настроек для всех IDE</li>
+        <li>Конец войны "табы или пробелы"</li>
+        <li>Разные настройки для разных файлов</li>
+      </ul>
     </section>
     <section id="" class="slide">
       <h2>Формат .editorconfig</h2>
-      <p>код</p>
+      <pre><code># comment
+root = true
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 4
+# Tab indentation (no size specified)
+[*.{md,jade}]
+indent_style = tab</code></pre>
     </section>
     <section id="" class="slide">
       <h2>Поддержка .editorconfig</h2>
@@ -82,11 +96,31 @@
       <p>Правила</p>
     </section>
     <section id="" class="slide">
+      <div data-content="HTMLHint" class="terminal">
+        <p>npm install htmlhint -g</p>
+      </div>
+      <pre><code>{
+   "tagname-lowercase": true,
+   "attr-lowercase": true,
+   "attr-value-double-quotes": true,
+   "doctype-first": true,
+   "tag-pair": true,
+   "spec-char-escape": true,
+   "id-unique": true,
+   "src-not-empty": true,
+   "attr-no-duplication": true,
+   "title-require": true
+}</code></pre>
+    </section>
+    <section id="" class="slide">
       <p>Установка</p>
       <p>Конфигурация</p>
     </section>
-    <section id="" class="slide">
-      <p>Редакторы</p>
+    <section id="" class="slide  clear">
+      <h2>Из коробки</h2><img src="pictures/editorconfig-native.png" class="cover"/>
+    </section>
+    <section id="" class="slide  clear">
+      <h2>Есть плагин</h2><img src="pictures/editorconfig-plugin.png" class="cover"/>
     </section>
     <section id="" class="slide">
       <p>В сборке htmlhint-loader</p>
@@ -197,7 +231,7 @@
       <p>Решение - делать проверки в CI</p>
       <p>Bitbucket - Pipelines</p>
       <p>Github - TravisCI</p>
-      <p>GitLab - </p>
+      <p>GitLab -</p>
     </section>
     <section id="" class="slide">
       <h2>Подводя итог</h2>
