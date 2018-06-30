@@ -15,6 +15,7 @@ html(lang='ru')
     link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x10.css')
     link(rel='stylesheet', href='theme.css')
     link(rel='stylesheet', href='slides.css')
+    link(rel='stylesheet', href='highlight/styles/github.css')
   body.shower.list
     header.caption
       h1 !{title}
@@ -22,7 +23,7 @@ html(lang='ru')
       p Александра Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
         | )
-      +cover('pictures/cover.jpg')
+      img.cover(src='pictures/bat-signal.jpg')
     +slide({header: "Кто я?", classes: "label-header right white"})
       ul
         li Глава отдела фронтенда, LOVATA
@@ -31,7 +32,8 @@ html(lang='ru')
         img.logo(src="pictures/minskcss.png")
         img.logo(src="pictures/minskjs.png")
         img.logo.css-m-js(src="pictures/css-minsk-js.svg")
-      +cover('pictures/about-cover.jpg')
+      img.cover.height(src='pictures/bg-blur.jpg')
+      img.cover.place.left(src='pictures/about-cover.jpg')
     +slide({header: "О чем буду говорить", classes: ""})
       ul
         li Как унифицировать codestyle (HTML, CSS, JS)
@@ -55,15 +57,21 @@ html(lang='ru')
         li Ошибки видно в редакторе
         li Невалидный код не попадает в общую кодовую базу
     +slide({header: "С чего начать", classes: ""})
-      p С настройки редактора - .editorconfig
+      p С настройки редактора
+      img.place.right(src='pictures/mechanic.jpg', height="100%")
+      img.place.right.next(src='pictures/editorconfig-logo.png', style='width: 420px; top: 159px; right: 80px;')
     +slide({header: ".editorconfig", classes: ""})
       ul
         li Единый формат настроек для всех IDE
         li Конец войны "табы или пробелы"
         li Разные настройки для разных файлов
-    +slide({header: "Из коробки", classes: "clear"})
+    +slide({header: "", classes: "clear"})
+      h2.shout.faded.next Из коробки
+      img.cover.height(src='pictures/bg-blur.jpg')
       +cover('pictures/editorconfig-native.png')
-    +slide({header: "Есть плагин", classes: "clear"})
+    +slide({header: "", classes: "clear"})
+      h2.shout.faded.next Есть плагин
+      img.cover.height(src='pictures/bg-blur.jpg')
       +cover('pictures/editorconfig-plugin.png')
     +slide({header: "Формат .editorconfig", classes: ""})
       pre
@@ -76,19 +84,24 @@ html(lang='ru')
           | charset = utf-8
           | indent_style = space
           | indent_size = 4
-          | # Tab indentation (no size specified)
+          | &nbsp;
           | [*.{md,jade}]
           | indent_style = tab
-    +slide({header: "Поддержка .editorconfig", classes: ""})
-    +slide({header: "HTML", classes: ""})
-      p HTMLHint
+    +slide({header: "", classes: ""})
+      img.cover.height(src='pictures/bg-blur.jpg')
+      div.place
+        p.center
+          img(src='pictures/htmlhint.png')
+        p.center
+          a.link.link-github(href='https://github.com/yaniswang/HTMLHint') yaniswang/HTMLHint
     +slide({header: "", classes: ""})
       p Правила
     +slide({header: "", classes: ""})
       .terminal(data-content='HTMLHint')
         p npm install htmlhint -g
+      br
       pre
-        code
+        code.hljs
           |{
           |    "tagname-lowercase": true,
           |    "attr-lowercase": true,
@@ -162,6 +175,10 @@ html(lang='ru')
       p Конфигурация
     +slide({header: "Работа с git", classes: ""})
       p Git flow - как ветвиться
+    +slide({header: '', classes: 'clear black'})
+      img.cover.height(src='pictures/git-flow-meme.jpg')
+    +slide({header: '', classes: 'clear'})
+      img.cover.height(src='pictures/git-flow.png')
     +slide({header: "", classes: ""})
       p поначалу все хорошо, все хотят их внедрить, с нетерпением ждут...
     +slide({header: "Проблема 1. Сборка падает из-за слишком строгих правил", classes: ""})
@@ -198,3 +215,6 @@ html(lang='ru')
 
     .progress
     script(src='shower/shower.min.js')
+    script(src='highlight/highlight.pack.js')
+
+    script(type='text/javascript') hljs.initHighlightingOnLoad();

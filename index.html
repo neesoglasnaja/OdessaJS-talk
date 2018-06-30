@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="slides.css">
+    <link rel="stylesheet" href="highlight/styles/github.css">
   </head>
   <body class="shower list">
     <header class="caption">
@@ -15,7 +16,7 @@
     </header>
     <section id="cover" class="slide  cover">
       <h2>Как внедрить стандарты разработки, чтобы никто не пострадал</h2>
-      <p>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/cover.jpg" class="cover"/>
+      <p>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/bat-signal.jpg" class="cover">
     </section>
     <section id="" class="slide  label-header right white">
       <h2>Кто я?</h2>
@@ -23,7 +24,7 @@
         <li>Глава отдела фронтенда, LOVATA</li>
         <li>Full-stack Node.js разработчик</li>
       </ul>
-      <p><img src="pictures/minskcss.png" class="logo"><img src="pictures/minskjs.png" class="logo"><img src="pictures/css-minsk-js.svg" class="logo css-m-js"></p><img src="pictures/about-cover.jpg" class="cover"/>
+      <p><img src="pictures/minskcss.png" class="logo"><img src="pictures/minskjs.png" class="logo"><img src="pictures/css-minsk-js.svg" class="logo css-m-js"></p><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/about-cover.jpg" class="cover place left">
     </section>
     <section id="" class="slide">
       <h2>О чем буду говорить</h2>
@@ -61,7 +62,7 @@
     </section>
     <section id="" class="slide">
       <h2>С чего начать</h2>
-      <p>С настройки редактора - .editorconfig</p>
+      <p>С настройки редактора</p><img src="pictures/mechanic.jpg" height="100%" class="place right"><img src="pictures/editorconfig-logo.png" style="width: 420px; top: 159px; right: 80px;" class="place right next">
     </section>
     <section id="" class="slide">
       <h2>.editorconfig</h2>
@@ -70,6 +71,12 @@
         <li>Конец войны "табы или пробелы"</li>
         <li>Разные настройки для разных файлов</li>
       </ul>
+    </section>
+    <section id="" class="slide  clear">
+      <h2 class="shout faded next">Из коробки</h2><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/editorconfig-native.png" class="cover"/>
+    </section>
+    <section id="" class="slide  clear">
+      <h2 class="shout faded next">Есть плагин</h2><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/editorconfig-plugin.png" class="cover"/>
     </section>
     <section id="" class="slide">
       <h2>Формат .editorconfig</h2>
@@ -81,16 +88,15 @@ insert_final_newline = true
 charset = utf-8
 indent_style = space
 indent_size = 4
-# Tab indentation (no size specified)
+&nbsp;
 [*.{md,jade}]
 indent_style = tab</code></pre>
     </section>
-    <section id="" class="slide">
-      <h2>Поддержка .editorconfig</h2>
-    </section>
-    <section id="" class="slide">
-      <h2>HTML</h2>
-      <p>HTMLHint</p>
+    <section id="" class="slide"><img src="pictures/bg-blur.jpg" class="cover height">
+      <div class="place">
+        <p class="center"><img src="pictures/htmlhint.png"></p>
+        <p class="center"><a href="https://github.com/yaniswang/HTMLHint" class="link link-github">yaniswang/HTMLHint</a></p>
+      </div>
     </section>
     <section id="" class="slide">
       <p>Правила</p>
@@ -98,8 +104,8 @@ indent_style = tab</code></pre>
     <section id="" class="slide">
       <div data-content="HTMLHint" class="terminal">
         <p>npm install htmlhint -g</p>
-      </div>
-      <pre><code>{
+      </div><br>
+      <pre><code class="hljs">{
    "tagname-lowercase": true,
    "attr-lowercase": true,
    "attr-value-double-quotes": true,
@@ -115,12 +121,6 @@ indent_style = tab</code></pre>
     <section id="" class="slide">
       <p>Установка</p>
       <p>Конфигурация</p>
-    </section>
-    <section id="" class="slide  clear">
-      <h2>Из коробки</h2><img src="pictures/editorconfig-native.png" class="cover"/>
-    </section>
-    <section id="" class="slide  clear">
-      <h2>Есть плагин</h2><img src="pictures/editorconfig-plugin.png" class="cover"/>
     </section>
     <section id="" class="slide">
       <p>В сборке htmlhint-loader</p>
@@ -213,6 +213,10 @@ indent_style = tab</code></pre>
       <h2>Работа с git</h2>
       <p>Git flow - как ветвиться</p>
     </section>
+    <section id="" class="slide  clear black"><img src="pictures/git-flow-meme.jpg" class="cover height">
+    </section>
+    <section id="" class="slide  clear"><img src="pictures/git-flow.png" class="cover height">
+    </section>
     <section id="" class="slide">
       <p>поначалу все хорошо, все хотят их внедрить, с нетерпением ждут...</p>
     </section>
@@ -256,5 +260,7 @@ indent_style = tab</code></pre>
     </section>
     <div class="progress"></div>
     <script src="shower/shower.min.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
