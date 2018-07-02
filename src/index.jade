@@ -24,7 +24,7 @@ html(lang='ru')
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
         | )
       img.cover(src='pictures/bat-signal.jpg')
-    +slide({header: "Кто я?", classes: "label-header right white"})
+    +slide({header: "Кто я?", classes: "label-header right black"})
       ul
         li Глава отдела фронтенда, LOVATA
         li Full-stack Node.js разработчик
@@ -34,16 +34,40 @@ html(lang='ru')
         img.logo.css-m-js(src="pictures/css-minsk-js.svg")
       img.cover.height(src='pictures/bg-blur.jpg')
       img.cover.place.left(src='pictures/about-cover.jpg')
-    +slide({header: "О чем буду говорить", classes: ""})
+    +slide({header: "О чем буду говорить?", classes: "label-header black"})
       ul
         li Как унифицировать codestyle (HTML, CSS, JS)
-        li Автоматизация его проверки
-    +slide({header: "Немного теории", classes: ""})
-      p Guidelines - общие описания и принципы - что и зачем
-      p Styleguide - как делать
+        li Как автоматизировать его проверку
+        li Как внедрить проверку в CI
+      img.place.right.cover.height(src='pictures/cave-angle.png')
+    +slide({header: "", classes: "black label-header clear"})
+      img.cover.width(src="pictures/batman_vs_superman.jpg")
+      h2.place.bottom Guidelines&nbsp;&nbsp;&nbsp;VS&nbsp;&nbsp;&nbsp;Styleguide
+    +slide({header: "Guidelines", classes: "label-header"})
+      img(src='pictures/blackberry_guideline.jpg', style='width: 116%; margin-left: -8%;')
+    +slide({header: "Guidelines", classes: "label-header"})
+      ul
+        li Набор стандартов и инструкций по использованию фирменного стиля
+          ul
+            li.next Применение логотипов, знаков
+            li.next Шрифты
+            li.next Цвета
+            li.next Правильное размещение на носителях
+        li.next Самостоятельный документ
+    +slide({header: "Styleguide", classes: "label-header"})
+      img.cover.width(src='../pictures/styleguide.jpg')
+    +slide({header: "Styleguide", classes: "label-header"})
+      ul
+        li Коллекция предварительно созданных элементов и правил
+        li.next В идеале — интерактивность
+        li.next Может содержать код
       footer
         p Но они просто так никому не нужны
         p Это скорее про то, каким должен быть интерфейс, а не код
+    +slide({header: "React Styleguidist", classes: "label-header"})
+      img(src='../pictures/styleguidist-button.jpg', style='width: 90%;')
+      footer
+        p В первый день будет выступать Хеннинг Музцынски, у него как раз доклад про Styleguidist, будет красивая отсылка ;)
     +slide({header: "codestyle", classes: ""})
       p codestyle - правила, по которым надо писать код
       footer
@@ -56,7 +80,7 @@ html(lang='ru')
         li Они внедрены в процесс сборки
         li Ошибки видно в редакторе
         li Невалидный код не попадает в общую кодовую базу
-    +slide({header: "С чего начать", classes: ""})
+    +slide({header: "С чего начать?", classes: ""})
       p С настройки редактора
       img.place.right(src='pictures/mechanic.jpg', height="100%")
       img.place.right.next(src='pictures/editorconfig-logo.png', style='width: 420px; top: 159px; right: 80px;')
@@ -202,8 +226,10 @@ html(lang='ru')
         li CI
     +slide({header: "Материалы по теме", classes: ""})
       ul
-        li Кодстайл и насилие
-        li Как оптимизировать фронтенд
+        li
+          a(href='https://www.youtube.com/watch?v=HZF3XRNOpGo') Кодстайл и насилие — Антон Немцев
+        li
+          a(href='https://www.youtube.com/watch?v=jcTD-zpY5RM') Как оптимизировать фронтенд — Мария Кабаш
     +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
       p.end-link
         a.bigger(href="http://bit.ly/" target="_blank") bit.ly/
