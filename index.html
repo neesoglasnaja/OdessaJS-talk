@@ -40,7 +40,7 @@
     <section id="" class="slide  label-header">
       <h2>Guidelines</h2><img src="pictures/blackberry_guideline.jpg" style="width: 116%; margin-left: -8%;">
     </section>
-    <section id="" class="slide  label-header">
+    <section id="" class="slide  label-header black">
       <h2>Guidelines</h2>
       <ul>
         <li>Набор стандартов и инструкций по использованию фирменного стиля
@@ -57,7 +57,7 @@
     <section id="" class="slide  label-header">
       <h2>Styleguide</h2><img src="../pictures/styleguide.jpg" class="cover width">
     </section>
-    <section id="" class="slide  label-header">
+    <section id="" class="slide  label-header black">
       <h2>Styleguide</h2>
       <ul>
         <li>Коллекция предварительно созданных элементов и правил</li>
@@ -113,8 +113,8 @@
     </section>
     <section id="" class="slide">
       <h2>Формат .editorconfig</h2>
-      <pre><code># comment
-root = true
+      <pre><code>root = true
+&nbsp;
 [*]
 end_of_line = lf
 insert_final_newline = true
@@ -128,16 +128,17 @@ indent_style = tab</code></pre>
     <section id="" class="slide"><img src="pictures/bg-blur.jpg" class="cover height">
       <div class="place">
         <p class="center"><img src="pictures/htmlhint.png"></p>
-        <p class="center"><a href="https://github.com/yaniswang/HTMLHint" class="link link-github">yaniswang/HTMLHint</a></p>
+        <p style="font-size: 1.2em; background-color: rgba(0,0,0,0.7)" class="center"><a href="https://github.com/yaniswang/HTMLHint" class="link link-github-white">yaniswang/HTMLHint</a></p>
       </div>
     </section>
     <section id="" class="slide">
-      <p>Правила</p>
+      <div data-content="HTMLHint" class="terminal place">
+        <p>npm install htmlhint -g</p>
+        <p>htmlhint test.html</p>
+      </div>
     </section>
     <section id="" class="slide">
-      <div data-content="HTMLHint" class="terminal">
-        <p>npm install htmlhint -g</p>
-      </div><br>
+      <h2>.htmlhintrc</h2>
       <pre><code class="hljs">{
    "tagname-lowercase": true,
    "attr-lowercase": true,
@@ -152,11 +153,43 @@ indent_style = tab</code></pre>
 }</code></pre>
     </section>
     <section id="" class="slide">
-      <p>Установка</p>
-      <p>Конфигурация</p>
+      <div data-content="gulp-htmlhint" class="terminal">
+        <p>npm install --save-dev gulp-htmlhint</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const htmlhint = require('gulp-htmlhint');
+gulp
+   .src('./src/*.html')
+   .pipe(htmlhint());</code></pre>
     </section>
     <section id="" class="slide">
-      <p>В сборке htmlhint-loader</p>
+      <div data-content="grunt-htmlhint" class="terminal">
+        <p>npm install --save-dev grunt-htmlhint</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+grunt.loadNpmTasks('grunt-htmlhint');
+...
+htmlhint: {
+  options: {
+    htmlhintrc: '.htmlhintrc'
+  },
+}</code></pre>
+    </section>
+    <section id="" class="slide">
+      <div data-content="htmlhint-loader" class="terminal">
+        <p>npm install --save-dev htmlhint-loader</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      enforce: 'pre',
+      test: /\.html/,
+      loader: 'htmlhint-loader',
+      exclude: /node_modules/
+    }]
+  }
+}</code></pre>
     </section>
     <section id="" class="slide">
       <p>htmllint / html-lint валидация html5</p>

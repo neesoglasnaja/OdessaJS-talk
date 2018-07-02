@@ -45,7 +45,7 @@ html(lang='ru')
       h2.place.bottom Guidelines&nbsp;&nbsp;&nbsp;VS&nbsp;&nbsp;&nbsp;Styleguide
     +slide({header: "Guidelines", classes: "label-header"})
       img(src='pictures/blackberry_guideline.jpg', style='width: 116%; margin-left: -8%;')
-    +slide({header: "Guidelines", classes: "label-header"})
+    +slide({header: "Guidelines", classes: "label-header black"})
       ul
         li Набор стандартов и инструкций по использованию фирменного стиля
           ul
@@ -56,7 +56,7 @@ html(lang='ru')
         li.next Самостоятельный документ
     +slide({header: "Styleguide", classes: "label-header"})
       img.cover.width(src='../pictures/styleguide.jpg')
-    +slide({header: "Styleguide", classes: "label-header"})
+    +slide({header: "Styleguide", classes: "label-header black"})
       ul
         li Коллекция предварительно созданных элементов и правил
         li.next В идеале — интерактивность
@@ -100,8 +100,8 @@ html(lang='ru')
     +slide({header: "Формат .editorconfig", classes: ""})
       pre
         code
-          | # comment
           | root = true
+          | &nbsp;
           | [*]
           | end_of_line = lf
           | insert_final_newline = true
@@ -116,14 +116,13 @@ html(lang='ru')
       div.place
         p.center
           img(src='pictures/htmlhint.png')
-        p.center
-          a.link.link-github(href='https://github.com/yaniswang/HTMLHint') yaniswang/HTMLHint
+        p.center(style='font-size: 1.2em; background-color: rgba(0,0,0,0.7)')
+          a.link.link-github-white(href='https://github.com/yaniswang/HTMLHint') yaniswang/HTMLHint
     +slide({header: "", classes: ""})
-      p Правила
-    +slide({header: "", classes: ""})
-      .terminal(data-content='HTMLHint')
+      .terminal.place(data-content='HTMLHint')
         p npm install htmlhint -g
-      br
+        p htmlhint test.html
+    +slide({header: ".htmlhintrc", classes: ""})
       pre
         code.hljs
           |{
@@ -139,10 +138,47 @@ html(lang='ru')
           |    "title-require": true
           |}
     +slide({header: "", classes: ""})
-      p Установка
-      p Конфигурация
+      .terminal(data-content='gulp-htmlhint')
+        p npm install --save-dev gulp-htmlhint
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const htmlhint = require('gulp-htmlhint');
+          | gulp
+          |    .src('./src/*.html')
+          |    .pipe(htmlhint());
     +slide({header: "", classes: ""})
-      p В сборке htmlhint-loader
+      .terminal(data-content='grunt-htmlhint')
+        p npm install --save-dev grunt-htmlhint
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | grunt.loadNpmTasks('grunt-htmlhint');
+          | ...
+          | htmlhint: {
+          |   options: {
+          |     htmlhintrc: '.htmlhintrc'
+          |   },
+          | }
+    +slide({header: "", classes: ""})
+      .terminal(data-content='htmlhint-loader')
+        p npm install --save-dev htmlhint-loader
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       enforce: 'pre',
+          |       test: /\.html/,
+          |       loader: 'htmlhint-loader',
+          |       exclude: /node_modules/
+          |     }]
+          |   }
+          | }
     +slide({header: "", classes: ""})
       p htmllint / html-lint валидация html5
       p pug-lint
