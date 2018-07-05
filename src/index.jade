@@ -68,18 +68,24 @@ html(lang='ru')
       img(src='../pictures/styleguidist-button.jpg', style='width: 90%;')
       footer
         p В первый день будет выступать Хеннинг Музцынски, у него как раз доклад про Styleguidist, будет красивая отсылка ;)
-    +slide({header: "codestyle", classes: ""})
-      p codestyle - правила, по которым надо писать код
+    +slide({header: "Code Style", classes: "", styles: "background-color: #F7F6F6;"})
+      p Правила, по которым надо писать код
+      ul
+        li Для быстрого восприятия кода
+        li Для предотвращения ошибок в коде
+        li Для быстрого написания кода
+      img.place.right.cover.height(src="../pictures/always-be-batman.png", alt="Be Batman")
       footer
         p Но и он никому не нужен (на самом деле)
-    +slide({header: "", classes: ""})
-      p linters - автоматическая проверка
-    +slide({header: "", classes: ""})
+    +slide({header: "Linters", classes: "black label-header"})
+      p Автоматическая проверка кода
+      img.cover.height(src="../pictures/batman-vision.jpg", alt="")
+    +slide({header: "Linters", classes: "black label-header"})
       ul
         li Правила хранятся в репозитории проекта
-        li Они внедрены в процесс сборки
-        li Ошибки видно в редакторе
-        li Невалидный код не попадает в общую кодовую базу
+        li.next Они внедрены в процесс сборки
+        li.next Ошибки видно в редакторе
+        li.next Невалидный код не попадает в общую кодовую базу
     +slide({header: "С чего начать?", classes: ""})
       p С настройки редактора
       img.place.right(src='pictures/mechanic.jpg', height="100%")
@@ -179,13 +185,41 @@ html(lang='ru')
           |     }]
           |   }
           | }
-    +slide({header: "", classes: ""})
-      p htmllint / html-lint валидация html5
-      p pug-lint
-    +slide({header: "CSS", classes: ""})
+    +slide({header: "На любой вкус", classes: "label-header"})
+      ul
+        li
+          a(href="https://www.npmjs.com/package/htmllint") htmllint
+        li
+          a(href="https://www.npmjs.com/package/html-lint") html-lint
+        li
+          a(href="https://www.npmjs.com/package/pug-lint") pug-lint
+        li
+          a(href="https://www.npmjs.com/package/markdownlint") markdownlint
+      img.place.right.bottom(src="../pictures/robin-costumes.png", alt="", style="width: 50%; margin: 50px;")
+    +slide({header: "CSS", classes: "label-header", styles: "background-color: #F2F2F2;"})
       p Stylelint
-    +slide({header: "", classes: ""})
-      p Правила
+      img.place(src="../pictures/stylelint.png", alt="Stylelint")
+    +slide({header: ".stylelintrc", classes: ""})
+      pre
+        code.hljs
+          | {
+          |   "extends": "stylelint-config-recommended",
+          |   "rules": {
+          |     "at-rule-no-unknown": [ true, {
+          |       "ignoreAtRules": [
+          |         "extends"
+          |       ]
+          |     }],
+          |     "block-no-empty": null,
+          |     "unit-whitelist": ["em", "rem", "s"]
+          |   }
+          | }
+    +slide({header: "Stylelint", classes: "black label-header"})
+      ul
+        li 170 встроенных правил
+        li Возможность написания и подключения плагинов
+        li Возможность расширения готовых конфигураций
+        li Работает с препроцессорными кодом (SCSS, Less, PostCSS)
     +slide({header: "", classes: ""})
       p Установка
       p Конфигурация
