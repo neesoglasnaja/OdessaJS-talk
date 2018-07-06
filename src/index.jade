@@ -199,6 +199,12 @@ html(lang='ru')
     +slide({header: "CSS", classes: "label-header", styles: "background-color: #F2F2F2;"})
       p Stylelint
       img.place(src="../pictures/stylelint.png", alt="Stylelint")
+    +slide({header: "Stylelint", classes: "black label-header"})
+      ul
+        li 170 встроенных правил
+        li Возможность написания и подключения плагинов
+        li Возможность расширения готовых конфигураций
+        li Работает с препроцессорными кодом (SCSS, Less, PostCSS)
     +slide({header: ".stylelintrc", classes: ""})
       pre
         code.hljs
@@ -214,24 +220,81 @@ html(lang='ru')
           |     "unit-whitelist": ["em", "rem", "s"]
           |   }
           | }
-    +slide({header: "Stylelint", classes: "black label-header"})
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='stylelint')
+        p npm install -g stylelint
+        p stylelint "styles/*.css"
+    +slide({header: "Плагины для редакторов", classes: ""})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="../pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 10px 30px;")
+        img(src="../pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 10px 30px;")
+        img(src="../pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 10px 30px;")
+        img(src="../pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
+        img(src="../pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
+      p.center
+        a(href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins") editor-plugins
+    +slide({header: "WebStorm", classes: ""})
+      img.cover.width(src="../pictures/webstorm-stylelint.png", alt="WebStorm Stylelint integration")
+    +slide({header: "", classes: ""})
+      h2
+        a.link.link-github(href="https://github.com/morishitter/stylefmt") morishitter/stylefmt
+      img.place(src="../pictures/stylefmt-logo.svg", alt="Stylefmt", width="50%")
+    +slide({header: "", classes: ""})
+      .terminal(data-content='gulp-stylelint')
+        p npm install stylelint gulp-stylelint --save-dev
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const stylelint = require('gulp-stylelint');
+          | gulp
+          |    .src('./src/*.css')
+          |    .pipe(gulpStylelint({
+          |       reporters: [
+          |         { formatter: 'string', console: true }
+          |       ]
+          |    }));
+    +slide({header: "", classes: ""})
+      .terminal(data-content='grunt-stylelint')
+        p npm install stylelint grunt-stylelint --save-dev
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | grunt.loadNpmTasks('grunt-stylelint');
+          | ...
+          | grunt.initConfig({
+          |   stylelint: {
+          |     all: ['css/**/*.css', 'sass/**/*.scss']
+          |   }
+          | });
+    +slide({header: "", classes: ""})
+      .terminal(data-content='stylelint-webpack-plugin')
+        p npm install stylelint-webpack-plugin --save-dev
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const StyleLintPlugin = require('stylelint-webpack-plugin');
+          | &nbsp;
+          | module.exports = {
+          |   plugins: [
+          |     new StyleLintPlugin(options),
+          |   ]
+          | }
+    +slide({header: "Хочется больше?", classes: "label-header"})
       ul
-        li 170 встроенных правил
-        li Возможность написания и подключения плагинов
-        li Возможность расширения готовых конфигураций
-        li Работает с препроцессорными кодом (SCSS, Less, PostCSS)
-    +slide({header: "", classes: ""})
-      p Установка
-      p Конфигурация
-    +slide({header: "", classes: ""})
-      p Редакторы
-    +slide({header: "", classes: ""})
-      p В сборке stylelint-loader
-    +slide({header: "", classes: ""})
-      p sass-lint / stylelint-scss
-      p lesshint
-      p Stylint
-      p stylelint-selector-bem-pattern
+        li
+          a(href="https://www.npmjs.com/package/sass-lint") sass-lint
+        li
+          a(href="https://www.npmjs.com/package/stylelint-scss") stylelint-scss
+        li
+          a(href="https://www.npmjs.com/package/lesshint") lesshint
+        li
+          a(href="https://www.npmjs.com/package/stylint") stylint
+        li
+          a(href="https://www.npmjs.com/package/stylelint-selector-bem-pattern") stylelint-selector-bem-pattern
+      img.place.right.bottom(src="../pictures/dick-greyson-versions.jpg", alt="", style="width: 50%; margin: 50px;")
     +slide({header: "Порядок написания атрибутов", classes: ""})
       p http://csscomb.com/
     +slide({header: "", classes: ""})

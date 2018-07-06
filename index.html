@@ -211,6 +211,15 @@ module.exports = {
       <h2>CSS</h2>
       <p>Stylelint</p><img src="../pictures/stylelint.png" alt="Stylelint" class="place">
     </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>Stylelint</h2>
+      <ul>
+        <li>170 встроенных правил</li>
+        <li>Возможность написания и подключения плагинов</li>
+        <li>Возможность расширения готовых конфигураций</li>
+        <li>Работает с препроцессорными кодом (SCSS, Less, PostCSS)</li>
+      </ul>
+    </section>
     <section id="" style="" class="slide">
       <h2>.stylelintrc</h2>
       <pre><code class="hljs">{
@@ -226,30 +235,72 @@ module.exports = {
   }
 }</code></pre>
     </section>
-    <section id="" style="" class="slide  black label-header">
-      <h2>Stylelint</h2>
+    <section id="" style="" class="slide">
+      <div data-content="stylelint" class="terminal place">
+        <p>npm install -g stylelint</p>
+        <p>stylelint "styles/*.css"</p>
+      </div>
+    </section>
+    <section id="" style="" class="slide">
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="../pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 10px 30px;"><img src="../pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 10px 30px;"><img src="../pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 10px 30px;"><img src="../pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 10px 30px;"><img src="../pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 10px 30px;"></div>
+      <p class="center"><a href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins">editor-plugins</a></p>
+    </section>
+    <section id="" style="" class="slide">
+      <h2>WebStorm</h2><img src="../pictures/webstorm-stylelint.png" alt="WebStorm Stylelint integration" class="cover width">
+    </section>
+    <section id="" style="" class="slide">
+      <h2><a href="https://github.com/morishitter/stylefmt" class="link link-github">morishitter/stylefmt</a></h2><img src="../pictures/stylefmt-logo.svg" alt="Stylefmt" width="50%" class="place">
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="gulp-stylelint" class="terminal">
+        <p>npm install stylelint gulp-stylelint --save-dev</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const stylelint = require('gulp-stylelint');
+gulp
+   .src('./src/*.css')
+   .pipe(gulpStylelint({
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+   }));</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="grunt-stylelint" class="terminal">
+        <p>npm install stylelint grunt-stylelint --save-dev</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+grunt.loadNpmTasks('grunt-stylelint');
+...
+grunt.initConfig({
+  stylelint: {
+    all: ['css/**/*.css', 'sass/**/*.scss']
+  }
+});</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="stylelint-webpack-plugin" class="terminal">
+        <p>npm install stylelint-webpack-plugin --save-dev</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+&nbsp;
+module.exports = {
+  plugins: [
+    new StyleLintPlugin(options),
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Хочется больше?</h2>
       <ul>
-        <li>170 встроенных правил</li>
-        <li>Возможность написания и подключения плагинов</li>
-        <li>Возможность расширения готовых конфигураций</li>
-        <li>Работает с препроцессорными кодом (SCSS, Less, PostCSS)</li>
-      </ul>
-    </section>
-    <section id="" style="" class="slide">
-      <p>Установка</p>
-      <p>Конфигурация</p>
-    </section>
-    <section id="" style="" class="slide">
-      <p>Редакторы</p>
-    </section>
-    <section id="" style="" class="slide">
-      <p>В сборке stylelint-loader</p>
-    </section>
-    <section id="" style="" class="slide">
-      <p>sass-lint / stylelint-scss</p>
-      <p>lesshint</p>
-      <p>Stylint</p>
-      <p>stylelint-selector-bem-pattern</p>
+        <li><a href="https://www.npmjs.com/package/sass-lint">sass-lint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylelint-scss">stylelint-scss</a></li>
+        <li><a href="https://www.npmjs.com/package/lesshint">lesshint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylint">stylint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylelint-selector-bem-pattern">stylelint-selector-bem-pattern</a></li>
+      </ul><img src="../pictures/dick-greyson-versions.jpg" alt="" style="width: 50%; margin: 50px;" class="place right bottom">
     </section>
     <section id="" style="" class="slide">
       <h2>Порядок написания атрибутов</h2>
