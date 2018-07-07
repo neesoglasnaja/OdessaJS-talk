@@ -66,8 +66,6 @@ html(lang='ru')
         p Это скорее про то, каким должен быть интерфейс, а не код
     +slide({header: "React Styleguidist", classes: "label-header"})
       img(src='../pictures/styleguidist-button.jpg', style='width: 90%;')
-      footer
-        p В первый день будет выступать Хеннинг Музцынски, у него как раз доклад про Styleguidist, будет красивая отсылка ;)
     +slide({header: "Code Style", classes: "", styles: "background-color: #F7F6F6;"})
       p Правила, по которым надо писать код
       ul
@@ -295,16 +293,50 @@ html(lang='ru')
         li
           a(href="https://www.npmjs.com/package/stylelint-selector-bem-pattern") stylelint-selector-bem-pattern
       img.place.right.bottom(src="../pictures/dick-greyson-versions.jpg", alt="", style="width: 50%; margin: 50px;")
-    +slide({header: "Порядок написания атрибутов", classes: ""})
-      p http://csscomb.com/
+    +slide({header: "CSScomb", classes: ""})
+      img.place(src="../pictures/csscomb-logo.jpg", alt="CSSComb")
     +slide({header: "", classes: ""})
-      p Правила
-      p Установка
-      p Конфигурация
+      .terminal.place(data-content='CSScomb')
+        p npm install csscomb -g
+        p csscomb assets/css
+    +slide({header: ".csscomb.json", classes: ""})
+      pre(style="font-size: 0.7em;")
+        code.hljs
+          | {
+          |   "always-semicolon": true,
+          |   "eof-newline": true,
+          |   "leading-zero": true,
+          |   "quotes": "single",
+          |   ...,
+          |   "sort-order": [
+          |     [
+          |       "position",
+          |       "z-index"
+          |     ],
+          |     [
+          |       "display",
+          |       "visibility"
+          |     ]
+          |   ]
+          | }
+    +slide({header: "CSSComb", classes: "black label-header"})
+      ul
+        li 24 встроенных правила
+        li Возможность сортировки любых свойств по блокам
+        li Встроенные конфигурации
+        li
+          code (master) Latest commit on 16 Feb 2017
+    +slide({header: "Плагины для редакторов", classes: ""})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="../pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/brackets-icon.svg", alt="Brackets", style="height: 150px; margin: 20px 30px;")
     +slide({header: "", classes: ""})
-      p Редакторы
-    +slide({header: "Генерация style guides", classes: ""})
-      p https://github.com/davidhund/styleguide-generators#css-parsing-css-source
+      h2.shout(style="font-size: 2em;")
+        a.link.link-github(href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source") davidhund/styleguide-generators
     +slide({header: "JS", classes: ""})
       p ESLint
     +slide({header: "", classes: ""})

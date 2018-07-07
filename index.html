@@ -71,9 +71,6 @@
     </section>
     <section id="" style="" class="slide  label-header">
       <h2>React Styleguidist</h2><img src="../pictures/styleguidist-button.jpg" style="width: 90%;">
-      <footer>
-        <p>В первый день будет выступать Хеннинг Музцынски, у него как раз доклад про Styleguidist, будет красивая отсылка ;)</p>
-      </footer>
     </section>
     <section id="" style=" background-color: #F7F6F6;" class="slide">
       <h2>Code Style</h2>
@@ -303,20 +300,49 @@ module.exports = {
       </ul><img src="../pictures/dick-greyson-versions.jpg" alt="" style="width: 50%; margin: 50px;" class="place right bottom">
     </section>
     <section id="" style="" class="slide">
-      <h2>Порядок написания атрибутов</h2>
-      <p>http://csscomb.com/</p>
+      <h2>CSScomb</h2><img src="../pictures/csscomb-logo.jpg" alt="CSSComb" class="place">
     </section>
     <section id="" style="" class="slide">
-      <p>Правила</p>
-      <p>Установка</p>
-      <p>Конфигурация</p>
+      <div data-content="CSScomb" class="terminal place">
+        <p>npm install csscomb -g</p>
+        <p>csscomb assets/css</p>
+      </div>
     </section>
     <section id="" style="" class="slide">
-      <p>Редакторы</p>
+      <h2>.csscomb.json</h2>
+      <pre style="font-size: 0.7em;"><code class="hljs">{
+  "always-semicolon": true,
+  "eof-newline": true,
+  "leading-zero": true,
+  "quotes": "single",
+  ...,
+  "sort-order": [
+    [
+      "position",
+      "z-index"
+    ],
+    [
+      "display",
+      "visibility"
+    ]
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>CSSComb</h2>
+      <ul>
+        <li>24 встроенных правила</li>
+        <li>Возможность сортировки любых свойств по блокам</li>
+        <li>Встроенные конфигурации</li>
+        <li><code>(master) Latest commit on 16 Feb 2017</code></li>
+      </ul>
     </section>
     <section id="" style="" class="slide">
-      <h2>Генерация style guides</h2>
-      <p>https://github.com/davidhund/styleguide-generators#css-parsing-css-source</p>
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="../pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 20px 30px;"><img src="../pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 20px 30px;"><img src="../pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 20px 30px;"><img src="../pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 20px 30px;"><img src="../pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 20px 30px;"><img src="../pictures/brackets-icon.svg" alt="Brackets" style="height: 150px; margin: 20px 30px;"></div>
+    </section>
+    <section id="" style="" class="slide">
+      <h2 style="font-size: 2em;" class="shout"><a href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source" class="link link-github">davidhund/styleguide-generators</a></h2>
     </section>
     <section id="" style="" class="slide">
       <h2>JS</h2>
