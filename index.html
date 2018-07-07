@@ -345,6 +345,41 @@ module.exports = {
     <section id="" style="" class="slide">
       <h2 style="font-size: 2em;" class="shout"><a href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source" class="link link-github">davidhund/styleguide-generators</a></h2>
     </section>
+    <section id="" style=" background-color: #EEEEEE" class="slide  label-header">
+      <h2>JS</h2><img src="../pictures/eslint-logo.jpg" alt="ESLint" width="80%" class="cover">
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>ESint</h2>
+      <ul>
+        <li>250+ встроенных правил</li>
+        <li>Возможность написания и подключения плагинов</li>
+        <li>Возможность расширения готовых конфигураций</li>
+        <li>Поддерживает различные версии стандартов (ES5/ES6/ESNext)</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide">
+      <h2>.eslintrc</h2>
+      <pre style="font-size: 0.9em;"><code class="hljs">{
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": { "browser": true },
+  "extends": ["airbnb-base"],
+  "plugins": ["vue"],
+  "rules": {
+    "semi": ["error", "always"],
+    "no-debugger": "warn"
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="eslint" class="terminal place">
+        <p>npm install -g eslint</p>
+        <p>eslint --init</p>
+        <p>eslint yourfile.js</p>
+      </div>
+    </section>
     <section id="" style="" class="slide">
       <h2>JS</h2>
       <p>ESLint</p>

@@ -337,6 +337,35 @@ html(lang='ru')
     +slide({header: "", classes: ""})
       h2.shout(style="font-size: 2em;")
         a.link.link-github(href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source") davidhund/styleguide-generators
+    +slide({header: "JS", classes: "label-header", styles: "background-color: #EEEEEE"})
+      img.cover(src="../pictures/eslint-logo.jpg", alt="ESLint" width="80%")
+    +slide({header: "ESint", classes: "black label-header"})
+      ul
+        li 250+ встроенных правил
+        li Возможность написания и подключения плагинов
+        li Возможность расширения готовых конфигураций
+        li Поддерживает различные версии стандартов (ES5/ES6/ESNext)
+    +slide({header: ".eslintrc", classes: ""})
+      pre(style="font-size: 0.9em;")
+        code.hljs
+          | {
+          |   "parserOptions": {
+          |     "parser": "babel-eslint",
+          |     "sourceType": "module"
+          |   },
+          |   "env": { "browser": true },
+          |   "extends": ["airbnb-base"],
+          |   "plugins": ["vue"],
+          |   "rules": {
+          |     "semi": ["error", "always"],
+          |     "no-debugger": "warn"
+          |   }
+          | }
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='eslint')
+        p npm install -g eslint
+        p eslint --init
+        p eslint yourfile.js
     +slide({header: "JS", classes: ""})
       p ESLint
     +slide({header: "", classes: ""})
