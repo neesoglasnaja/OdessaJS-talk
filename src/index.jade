@@ -129,7 +129,7 @@ html(lang='ru')
     +slide({header: ".htmlhintrc", classes: ""})
       pre
         code.hljs
-          |{
+          | {
           |    "tagname-lowercase": true,
           |    "attr-lowercase": true,
           |    "attr-value-double-quotes": true,
@@ -140,7 +140,7 @@ html(lang='ru')
           |    "src-not-empty": true,
           |    "attr-no-duplication": true,
           |    "title-require": true
-          |}
+          | }
     +slide({header: "", classes: ""})
       .terminal(data-content='gulp-htmlhint')
         p npm install --save-dev gulp-htmlhint
@@ -419,8 +419,10 @@ html(lang='ru')
         img(src="../pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
       p.center
         a(href="https://eslint.org/docs/5.0.0/user-guide/integrations") eslint.org/integrations
-    +slide({header: "StandardJS", classes: ""})
-    +slide({header: "Airbnb", classes: ""})
+    +slide({header: "StandardJS", classes: "label-header"})
+      img.cover(src="../pictures/standardjs-logo.png", alt="StandardJS", width="50%")
+    +slide({header: "Airbnb", classes: "label-header"})
+      img.place(src="../pictures/airbnb-eslint.png", alt="Airbnb ESLint", width="60%")
     +slide({header: "", classes: ""})
       p babel-eslint
       p tslint
