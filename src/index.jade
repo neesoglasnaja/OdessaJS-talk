@@ -357,11 +357,42 @@ html(lang='ru')
       p http://usejsdoc.org/
     +slide({header: "Форматирование", classes: ""})
       p prettier
-    +slide({header: "Запрещаем коммитить плохой код", classes: ""})
-      p pre-commit
+    +slide({header: "", classes: "black label-header"})
+      h2.shout(style="margin: 0 105px;") Запрещаем коммитить плохой код
+      img.cover.height(src="../pictures/joker-prison.jpg", alt="")
+    +slide({header: ".git/hooks/pre-commit", classes: ""})
+      pre
+        code.hljs
+          | #! /bin/bash
+          | if !(npm run lint:js --silent)
+          |   exit 1;
+          | fi
     +slide({header: "", classes: ""})
-      p Установка
-      p Конфигурация
+      .terminal(data-content='pre-commit')
+        p npm install --save-dev pre-commit
+      pre(style="font-size: 0.9em;")
+        code.hljs
+          | &nbsp;
+          | {
+          |   "name": "my-project",
+          |   "scripts": {
+          |     "lint:js": "eslint ./js/*.js",
+          |     "test": "echo '🤣 No' && exit 1"
+          |   },
+          |   "pre-commit": [
+          |     "lint:js",
+          |     "test"
+          |   ]
+          | }
+    +slide({header: "Выбери свой вариант", classes: "label-header"})
+      ul
+        li
+          a.link.link-github(href="https://github.com/observing/pre-commit") observing/pre-commit
+        li
+          a.link.link-github(href="https://github.com/okonet/lint-staged") okonet/lint-staged
+        li
+          a.link.link-github(href="https://github.com/typicode/husky") typicode/husky
+      img.place.right.cover.height(src="../pictures/alfred.jpg")
     +slide({header: "Работа с git", classes: ""})
       p Git flow - как ветвиться
     +slide({header: '', classes: 'clear black'})
