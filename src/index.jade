@@ -365,17 +365,60 @@ html(lang='ru')
       .terminal.place(data-content='eslint')
         p npm install -g eslint
         p eslint --init
-        p eslint yourfile.js
-    +slide({header: "JS", classes: ""})
-      p ESLint
+        p eslint scipts/*.js
     +slide({header: "", classes: ""})
-      p Правила
-      p Установка
-      p Конфигурация
+      .terminal(data-content='gulp-eslint')
+        p npm install gulp-eslint --save-dev
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const eslint = require('gulp-eslint');
+          | gulp
+          |    .src('./scripts/*.js')
+          |    .pipe(eslint())
+          |    .pipe(eslint.format())
+          |    .pipe(eslint.failAfterError());
     +slide({header: "", classes: ""})
-      p Редакторы
+      .terminal(data-content='grunt-eslint')
+        p npm install grunt-eslint --save-dev
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | require('load-grunt-tasks')(grunt);
+          | &nbsp;
+          | grunt.initConfig({
+          |   eslint: {
+          |     target: ['file.js']
+          |   }
+          | });
     +slide({header: "", classes: ""})
-      p В сборке eslint-loader
+      .terminal(data-content='eslint-loader')
+        p npm install eslint eslint-loader --save-dev
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs.javascript
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       test: /\.js$/,
+          |       exclude: /node_modules/,
+          |       loader: "eslint-loader",
+          |       options: { emitError: true }
+          |     }]
+          |   }
+          | }
+    +slide({header: "Плагины для редакторов", classes: ""})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="../pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
+        img(src="../pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
+      p.center
+        a(href="https://eslint.org/docs/5.0.0/user-guide/integrations") eslint.org/integrations
     +slide({header: "StandardJS", classes: ""})
     +slide({header: "Airbnb", classes: ""})
     +slide({header: "", classes: ""})
@@ -428,8 +471,10 @@ html(lang='ru')
       img.cover.height(src='pictures/git-flow-meme.jpg')
     +slide({header: '', classes: 'clear'})
       img.cover.height(src='pictures/git-flow.png')
-    +slide({header: "", classes: ""})
-      p поначалу все хорошо, все хотят их внедрить, с нетерпением ждут...
+    +slide({header: "", classes: "clear"})
+      img.cover.height(src="../pictures/lego-batman.jpg")
+    +slide({header: "", classes: "clear"})
+      img.cover.width(src="../pictures/sad-batman.jpg")
     +slide({header: "Проблема 1. Сборка падает из-за слишком строгих правил", classes: ""})
       p Решение - даунгрейдить в сборке "мешаюшие" свойства на warn
       ul

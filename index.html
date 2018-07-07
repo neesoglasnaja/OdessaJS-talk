@@ -377,23 +377,54 @@ module.exports = {
       <div data-content="eslint" class="terminal place">
         <p>npm install -g eslint</p>
         <p>eslint --init</p>
-        <p>eslint yourfile.js</p>
+        <p>eslint scipts/*.js</p>
       </div>
     </section>
     <section id="" style="" class="slide">
-      <h2>JS</h2>
-      <p>ESLint</p>
+      <div data-content="gulp-eslint" class="terminal">
+        <p>npm install gulp-eslint --save-dev</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const eslint = require('gulp-eslint');
+gulp
+   .src('./scripts/*.js')
+   .pipe(eslint())
+   .pipe(eslint.format())
+   .pipe(eslint.failAfterError());</code></pre>
     </section>
     <section id="" style="" class="slide">
-      <p>Правила</p>
-      <p>Установка</p>
-      <p>Конфигурация</p>
+      <div data-content="grunt-eslint" class="terminal">
+        <p>npm install grunt-eslint --save-dev</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+require('load-grunt-tasks')(grunt);
+&nbsp;
+grunt.initConfig({
+  eslint: {
+    target: ['file.js']
+  }
+});</code></pre>
     </section>
     <section id="" style="" class="slide">
-      <p>Редакторы</p>
+      <div data-content="eslint-loader" class="terminal">
+        <p>npm install eslint eslint-loader --save-dev</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs javascript">&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "eslint-loader",
+      options: { emitError: true }
+    }]
+  }
+}</code></pre>
     </section>
     <section id="" style="" class="slide">
-      <p>В сборке eslint-loader</p>
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="../pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 20px 30px;"><img src="../pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 20px 30px;"><img src="../pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 20px 30px;"><img src="../pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 20px 30px;"><img src="../pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 20px 30px;"></div>
+      <p class="center"><a href="https://eslint.org/docs/5.0.0/user-guide/integrations">eslint.org/integrations</a></p>
     </section>
     <section id="" style="" class="slide">
       <h2>StandardJS</h2>
@@ -456,8 +487,9 @@ fi</code></pre>
     </section>
     <section id="" style="" class="slide  clear"><img src="pictures/git-flow.png" class="cover height">
     </section>
-    <section id="" style="" class="slide">
-      <p>поначалу все хорошо, все хотят их внедрить, с нетерпением ждут...</p>
+    <section id="" style="" class="slide  clear"><img src="../pictures/lego-batman.jpg" class="cover height">
+    </section>
+    <section id="" style="" class="slide  clear"><img src="../pictures/sad-batman.jpg" class="cover width">
     </section>
     <section id="" style="" class="slide">
       <h2>Проблема 1. Сборка падает из-за слишком строгих правил</h2>
