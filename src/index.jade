@@ -3,7 +3,7 @@ include ./blocks/cover.jade
 include ./blocks/quote.jade
 include ./blocks/frame.jade
 
-- var title = "Как внедрить стандарты разработки, чтобы никто не пострадал"
+- var title = "Как внедрить стандарты разработки, чтобы никто не&nbsp;пострадал"
 
 doctype html
 html(lang='ru')
@@ -115,7 +115,7 @@ html(lang='ru')
           | &nbsp;
           | [*.{md,jade}]
           | indent_style = tab
-    +slide({header: "", classes: ""})
+    +slide({header: "HTML", classes: "label-header"})
       img.cover.height(src='pictures/bg-blur.jpg')
       div.place
         p.center
@@ -230,7 +230,7 @@ html(lang='ru')
         img(src="../pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
         img(src="../pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
       p.center
-        a(href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins") editor-plugins
+        a(href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins") stylelint.io/editor-plugins
     +slide({header: "WebStorm", classes: ""})
       img.cover.width(src="../pictures/webstorm-stylelint.png", alt="WebStorm Stylelint integration")
     +slide({header: "", classes: ""})
@@ -397,7 +397,7 @@ html(lang='ru')
           a(href='https://www.youtube.com/watch?v=jcTD-zpY5RM') Как оптимизировать фронтенд — Мария Кабаш
     +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
       p.end-link
-        a.bigger(href="http://bit.ly/" target="_blank") bit.ly/
+        a.bigger(href="http://bit.ly/Standards-OdessaJS" target="_blank") bit.ly/Standards-OdessaJS
         br
         | Александра Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
