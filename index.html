@@ -378,13 +378,40 @@ module.exports = {
       <h2>Форматирование</h2>
       <p>prettier</p>
     </section>
-    <section id="" style="" class="slide">
-      <h2>Запрещаем коммитить плохой код</h2>
-      <p>pre-commit</p>
+    <section id="" style="" class="slide  black label-header">
+      <h2 style="margin: 0 105px;" class="shout">Запрещаем коммитить плохой код</h2><img src="../pictures/joker-prison.jpg" alt="" class="cover height">
     </section>
     <section id="" style="" class="slide">
-      <p>Установка</p>
-      <p>Конфигурация</p>
+      <h2>.git/hooks/pre-commit</h2>
+      <pre><code class="hljs">#! /bin/bash
+if !(npm run lint:js --silent)
+  exit 1;
+fi</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="pre-commit" class="terminal">
+        <p>npm install --save-dev pre-commit</p>
+      </div>
+      <pre style="font-size: 0.9em;"><code class="hljs">&nbsp;
+{
+  "name": "my-project",
+  "scripts": {
+    "lint:js": "eslint ./js/*.js",
+    "test": "echo '🤣 No' && exit 1"
+  },
+  "pre-commit": [
+    "lint:js",
+    "test"
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Выбери свой вариант</h2>
+      <ul>
+        <li><a href="https://github.com/observing/pre-commit" class="link link-github">observing/pre-commit</a></li>
+        <li><a href="https://github.com/okonet/lint-staged" class="link link-github">okonet/lint-staged</a></li>
+        <li><a href="https://github.com/typicode/husky" class="link link-github">typicode/husky</a></li>
+      </ul><img src="../pictures/alfred.jpg" class="place right cover height">
     </section>
     <section id="" style="" class="slide">
       <h2>Работа с git</h2>
