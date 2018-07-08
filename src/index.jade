@@ -199,8 +199,10 @@ html(lang='ru')
       h2.shout(style="margin: 0 105px;") CSS
       img.cover.height(src='pictures/bg-blur.jpg')
     +slide({header: "CSS", classes: "label-header", styles: "background-color: #F2F2F2;"})
-      p Stylelint
-      img.place(src="pictures/stylelint.png", alt="Stylelint")
+      div.place
+        img(src="pictures/stylelint.png", alt="Stylelint")
+        p.center
+          a.link.link-github(href="https://github.com/stylelint/stylelint") stylelint/stylelint
     +slide({header: "Stylelint", classes: "black label-header"})
       ul
         li 170 встроенных правил
@@ -343,7 +345,10 @@ html(lang='ru')
       h2.shout(style="margin: 0 105px;") JavaScript
       img.cover.height(src='pictures/bg-blur.jpg')
     +slide({header: "JS", classes: "label-header", styles: "background-color: #EEEEEE"})
-      img.cover(src="pictures/eslint-logo.jpg", alt="ESLint" width="80%")
+      div.place
+        img(src="pictures/eslint-logo.jpg", alt="ESLint", height="300px")
+        p.center
+          a.link.link-github(href="https://github.com/eslint/eslint") eslint/eslint
     +slide({header: "ESLint", classes: "black label-header"})
       ul
         li 250+ встроенных правил
@@ -497,7 +502,7 @@ html(lang='ru')
       img.cover.height(src="pictures/lego-batman.jpg")
     +slide({header: "", classes: "clear"})
       img.cover.width(src="pictures/sad-batman.jpg")
-    +slide({header: "Проблема 1.<br>Слишком строгие справила", classes: "label-header black"})
+    +slide({header: "Проблема 1.<br>Слишком строгие правила", classes: "label-header black"})
       p.next Решение: понижать в dev-сборке «мешающие» свойства до
         code warn
       ul
@@ -558,6 +563,9 @@ html(lang='ru')
           | ]
         li Как оптимизировать фронтенд — Мария Кабаш [
           a(href='https://www.youtube.com/watch?v=jcTD-zpY5RM') Youtube
+          | ]
+        li The ABC of Coded Style Guides — Henning Muszynski [
+          a(href='https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides') Slideshare
           | ]
     +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
       p.end-link
