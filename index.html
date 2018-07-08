@@ -101,7 +101,7 @@
         <li>Единый формат настроек для всех IDE</li>
         <li class="next">~10 правил</li>
         <li class="next">Разные настройки для разных форматов файлов</li>
-        <li class="next">Конец войны "табы или пробелы"</li>
+        <li class="next">Конец войны «табы или пробелы»</li>
       </ul><img src="pictures/editorconfig-logo.png" style="width: 420px; top: 159px; right: 80px;" class="place right">
     </section>
     <section id="" style="" class="slide  clear">
@@ -209,7 +209,9 @@ module.exports = {
     </section>
     <section id="" style=" background-color: #F2F2F2;" class="slide  label-header">
       <h2>CSS</h2>
-      <p>Stylelint</p><img src="pictures/stylelint.png" alt="Stylelint" class="place">
+      <div class="place"><img src="pictures/stylelint.png" alt="Stylelint">
+        <p class="center"><a href="https://github.com/stylelint/stylelint" class="link link-github">stylelint/stylelint</a></p>
+      </div>
     </section>
     <section id="" style="" class="slide  black label-header">
       <h2>Stylelint</h2>
@@ -350,7 +352,10 @@ module.exports = {
       <h2 style="margin: 0 105px;" class="shout">JavaScript</h2><img src="pictures/bg-blur.jpg" class="cover height">
     </section>
     <section id="" style=" background-color: #EEEEEE" class="slide  label-header">
-      <h2>JS</h2><img src="pictures/eslint-logo.jpg" alt="ESLint" width="80%" class="cover">
+      <h2>JS</h2>
+      <div class="place"><img src="pictures/eslint-logo.jpg" alt="ESLint" height="300px">
+        <p class="center"><a href="https://github.com/eslint/eslint" class="link link-github">eslint/eslint</a></p>
+      </div>
     </section>
     <section id="" style="" class="slide  black label-header">
       <h2>ESLint</h2>
@@ -460,7 +465,7 @@ module.exports = {
     <section id="" style="" class="slide  black label-header">
       <h2 style="margin: 0 105px;" class="shout">Запрещаем коммитить плохой код</h2><img src="pictures/joker-prison.jpg" alt="" class="cover height">
     </section>
-    <section id="" style="" class="slide">
+    <section id="" style="" class="slide  label-header">
       <h2>.git/hooks/pre-commit</h2>
       <pre><code class="hljs">#! /bin/bash
 if !(npm run lint:js --silent)
@@ -504,14 +509,30 @@ fi</code></pre>
     <section id="" style="" class="slide  clear"><img src="pictures/sad-batman.jpg" class="cover width">
     </section>
     <section id="" style="" class="slide  label-header black">
-      <h2>Проблема 1.<br>Слишком строгие справила</h2>
-      <p class="next">Решение: даунгрейдить в dev сборке "мешаюшие" свойства на warn</p>
+      <h2>Проблема 1.<br>Слишком строгие правила</h2>
+      <p class="next">Решение: понижать в dev-сборке «мешающие» свойства до<code>warn</code></p>
       <ul>
-        <li class="next">Создаем еще 1 файл конфига .dev.eslintrc</li>
-        <li class="next">В нем extend от существующего конфига</li>
-        <li class="next">Добавляем правила с уровнем warn</li>
-        <li class="next">В webpack по ключу ENV подключаем нужный конфиг</li>
+        <li class="next">Создаем еще 1 файл конфигурации<code>.dev.eslintrc</code></li>
+        <li class="next">В нем — <code>extend</code> от существующей конфигурации</li>
+        <li class="next">Добавляем правила с уровнем<code>warn</code></li>
+        <li class="next">В сборщике по ключу ENV подключаем нужную конфигурацию</li>
       </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Пример для Webpack</h2>
+      <pre style="font-size: 0.9em"><code class="hljs javascript">const isProd = process.env.NODE_ENV === "production";
+&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      ...
+      loader: "eslint-loader",
+      options: {
+        configFile: <mark>isProd ? ".eslintrc" : ".dev.eslintrc"</mark>
+      }
+    }]
+  }
+}</code></pre>
     </section>
     <section id="" style="" class="slide  label-header black">
       <h2>Проблема 2.<br>Плохой код попадает в репозиторий</h2>
@@ -535,13 +556,13 @@ fi</code></pre>
           - npm i
           - npm run lint</code></pre>
     </section>
-    <section id="" style="" class="slide  label-header black">
+    <section id="" style="" class="slide  label-header black no-number">
       <h2>Подводя итог</h2>
       <ul>
         <li>Настроить редактор</li>
         <li class="next">Подключить линтеры</li>
         <li class="next">Вести документацию</li>
-        <li class="next">Бить по рукам с помощью git hooks</li>
+        <li class="next">Бить по рукам с помощью <code>git hooks</code></li>
         <li class="next">Настроить CI</li>
       </ul><img src="pictures/end.jpg" class="place right cover height">
     </section>
@@ -550,6 +571,7 @@ fi</code></pre>
       <ul>
         <li>Кодстайл и насилие — Антон Немцев [<a href="https://www.youtube.com/watch?v=HZF3XRNOpGo">Youtube</a>]</li>
         <li>Как оптимизировать фронтенд — Мария Кабаш [<a href="https://www.youtube.com/watch?v=jcTD-zpY5RM">Youtube</a>]</li>
+        <li>The ABC of Coded Style Guides — Henning Muszynski [<a href="https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides">Slideshare</a>]</li>
       </ul>
     </section>
     <section id="theend" style="" class="slide  cover label-header">
