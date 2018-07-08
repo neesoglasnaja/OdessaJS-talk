@@ -89,7 +89,7 @@ html(lang='ru')
         li Единый формат настроек для всех IDE
         li.next ~10 правил
         li.next Разные настройки для разных форматов файлов
-        li.next Конец войны "табы или пробелы"
+        li.next Конец войны «табы или пробелы»
       img.place.right(src='pictures/editorconfig-logo.png', style='width: 420px; top: 159px; right: 80px;')
     +slide({header: "", classes: "clear"})
       h2.shout.faded.next Из коробки
@@ -453,7 +453,7 @@ html(lang='ru')
     +slide({header: "", classes: "black label-header"})
       h2.shout(style="margin: 0 105px;") Запрещаем коммитить плохой код
       img.cover.height(src="pictures/joker-prison.jpg", alt="")
-    +slide({header: ".git/hooks/pre-commit", classes: ""})
+    +slide({header: ".git/hooks/pre-commit", classes: "label-header"})
       pre
         code.hljs
           | #! /bin/bash
@@ -498,12 +498,31 @@ html(lang='ru')
     +slide({header: "", classes: "clear"})
       img.cover.width(src="pictures/sad-batman.jpg")
     +slide({header: "Проблема 1.<br>Слишком строгие справила", classes: "label-header black"})
-      p.next Решение: даунгрейдить в dev сборке "мешаюшие" свойства на warn
+      p.next Решение: понижать в dev-сборке «мешающие» свойства до
+        code warn
       ul
-        li.next Создаем еще 1 файл конфига .dev.eslintrc
-        li.next В нем extend от существующего конфига
-        li.next Добавляем правила с уровнем warn
-        li.next В webpack по ключу ENV подключаем нужный конфиг
+        li.next Создаем еще 1 файл конфигурации
+          code .dev.eslintrc
+        li.next В нем — <code>extend</code> от существующей конфигурации
+        li.next Добавляем правила с уровнем
+          code warn
+        li.next В сборщике по ключу ENV подключаем нужную конфигурацию
+    +slide({header: "Пример для Webpack", classes: "label-header"})
+      pre(style="font-size: 0.9em")
+        code.hljs.javascript
+          | const isProd = process.env.NODE_ENV === "production";
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       ...
+          |       loader: "eslint-loader",
+          |       options: {
+          |         configFile: <mark>isProd ? ".eslintrc" : ".dev.eslintrc"</mark>
+          |       }
+          |     }]
+          |   }
+          | }
     +slide({header: "Проблема 2.<br>Плохой код попадает в репозиторий", classes: "label-header black"})
       p.next Решение: делать проверки в CI
       ul.next
@@ -524,12 +543,12 @@ html(lang='ru')
           |           - npm i
           |           - npm run lint
 
-    +slide({header: "Подводя итог", classes: "label-header black"})
+    +slide({header: "Подводя итог", classes: "label-header black no-number"})
       ul
         li Настроить редактор
         li.next Подключить линтеры
         li.next Вести документацию
-        li.next Бить по рукам с помощью git hooks
+        li.next Бить по рукам с помощью <code>git hooks</code>
         li.next Настроить CI
       img.place.right.cover.height(src="pictures/end.jpg")
     +slide({header: "Материалы по теме", classes: "label-header black"})
