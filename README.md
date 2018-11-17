@@ -1,6 +1,16 @@
 # Как внедрить стандарты разработки, чтобы никто не пострадал
 
+Слайды к выступлению на конференции [OdessaJS 2018](http://odessajs.org/). Видео выступления [на Youtube](https://youtu.be/Bf2ZUsBdCn4)
+
+There is always a room for discussion about what to use: tabs or spaces, quotes or double quotes, and so on. There are so many personal preferences in writing code that most likely you'll end up discussing not the logic or implementation itself, but how to use braces, spaces, and semicolons. But do we really need to talk about such things every time we start the project, do code reviews or a new developer joins the team? How to make your code base consistent and clear no matter how big your team or the project are? The whole bunch of tools is here to rescue you!
+
+I'm going to talk about all those tools and how to implement them into your code base to help you to improve the development process and code quality.
+
 ## Что еще посмотреть по теме
+
+* Кодстайл и насилие — Антон Немцев [Youtube](https://www.youtube.com/watch?v=HZF3XRNOpGo)
+* Как оптимизировать фронтенд — Мария Кабаш [Youtube](https://www.youtube.com/watch?v=jcTD-zpY5RM)
+* The ABC of Coded Style Guides — Henning Muszynski [Slideshare](https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides)
 
 ## How to launch slides
 ### 1. View the presentation
